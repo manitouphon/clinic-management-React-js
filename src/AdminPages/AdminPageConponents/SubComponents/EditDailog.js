@@ -500,7 +500,6 @@ export default function EditDailog({ open, setOpen, setdata, staff, staffType, d
                   variant="outlined"
                   color="secondary"
                   fullWidth
-                  required
                   value={profile}
                 />
               </Grid>

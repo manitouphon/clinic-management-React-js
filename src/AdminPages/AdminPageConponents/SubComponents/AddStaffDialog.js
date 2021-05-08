@@ -475,7 +475,7 @@ export default function AddStaffDialog({ open, setOpen, setdata, staffType, dbUr
                   variant="outlined"
                   color="secondary"
                   fullWidth
-                  required
+                
                 />
               </Grid>
               <Grid item sx={12} sm={6}>
