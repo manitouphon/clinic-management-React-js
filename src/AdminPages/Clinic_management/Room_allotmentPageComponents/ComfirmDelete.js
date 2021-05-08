@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -10,8 +10,6 @@ import { IconButton, makeStyles, Typography} from '@material-ui/core';
 import { NotListedLocation } from '@material-ui/icons';
 
 
-
-//Transistion Section:--------------------------TRANSISTION--------------------------------
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -39,14 +37,9 @@ const useStyle = makeStyles({
     textAlign:"center"
   }
 })
-//End of Transistion Section:---------------
 
-
-
-//Main Export Section:--------------------------EXPORT--------------------------------
-export default function ComfirmDeleteDialog({open, setOpen}) {
+export default function ComfirmDelete({open, setOpen, handleClickDelete}) {
   const classes=useStyle()
-
   return (
     <div>
       <Dialog
@@ -71,20 +64,18 @@ export default function ComfirmDeleteDialog({open, setOpen}) {
             <Typography variant="h4">
             Are you sure?
             </Typography>
-           You won't not get back the information !
+           You will not get back the information which you deleted !
           </DialogContentText>
         </DialogContent>
         <DialogActions>
         <Button onClick={()=>setOpen(false)} variant="contained" className={classes.btn_cancel}>
             Cancel
           </Button>
-        <Button onClick={() => setOpen(false) } variant="contained" className={classes.btn_agree} >
-            Yes,I'm sure
+        <Button onClick={()=>handleClickDelete() || setOpen(false) } variant="contained" className={classes.btn_agree} >
+            Yes,i'm sure
           </Button>
-       
         </DialogActions>
       </Dialog>
     </div>
   );
 }
-//End of Main Export Section:---------------

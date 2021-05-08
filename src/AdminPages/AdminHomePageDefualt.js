@@ -1,72 +1,54 @@
-import { makeStyles } from '@material-ui/core'
+import { makeStyles} from '@material-ui/core'
 import React from 'react'
-import { Fetch_data } from '../API/Fetch_data'
-
-//Theme Section:--------------------------THEME--------------------------------
+import {Fetch_data} from '../API/Fetch_data'
 const useStyle = makeStyles({
-    flex_container: {
+    flex_container:{
         display: "flex",
         alignItems: "stretch",
         backgroundColor: '#f4f4f4',
         width: '100%'
     },
-    flex_item: {
-        backgroundColor: "DodgerBlue",
+    flex_item:{
+        backgroundColor:"DodgerBlue",
         color: "white",
         margin: "10px",
         textAlign: "center",
         lineHeight: "75px",
-        fontSize: "30px",
+        fontSize:"30px",
         flexGrow: 1
 
     }
 
 })
-//End of Theme Section:---------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Main Export Section:--------------------------EXPORT--------------------------------
-
 function AdminHomePageDefualt() {
     const classes = useStyle()
-    // fetch data from staffs
-    const doctor = Fetch_data('http://localhost:8000/Doctor');
-    const receptnist = Fetch_data('http://localhost:8000/Receptionist');
-    const parmacist = Fetch_data('http://localhost:8000/Receptionist');
+    // fetch data from doctor
+        const doctor = Fetch_data('http://localhost:8000/Doctor');
+        const receptnist = Fetch_data('http://localhost:8000/Receptionist');
+        const Pharmacist = Fetch_data('http://localhost:8000/Receptionist');    
     const amount_staffs = [
         {
-            "id": 1,
+            "id": 1,  
             "staffType": "Doctor",
             "amount": doctor.data.length
         },
         {
             "id": 2,
-            "staffType": "Parmcist",
+            "staffType": "Pharmacist",
             "amount": receptnist.data.length
         },
         {
             "id": 3,
             "staffType": "Receptionist",
-            "amount": parmacist.data.length
+            "amount": Pharmacist.data.length
         },
 
-    ]
+     ]
     return (
         <div>
             <div className={classes.flex_container}>
                 {
-                    amount_staffs.map(amount_staff => (
+                    amount_staffs.map(amount_staff =>(
                         <div className={classes.flex_item}>
                             <p>{amount_staff.staffType}</p>
                             {amount_staff.amount}
@@ -74,13 +56,10 @@ function AdminHomePageDefualt() {
                     ))
                 }
             </div>
-
+            
 
         </div>
     )
 }
 
 export default AdminHomePageDefualt
-
-
-//End of Main Export Section:---------------

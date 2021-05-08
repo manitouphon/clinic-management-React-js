@@ -6,7 +6,7 @@ const useStyles = makeStyles({
     }
         
 })
-function ParmacistLayout({children}) {
+function PharmacistLayout({children}) {
 const classes = useStyles()
     return (
         <div>
@@ -17,4 +17,4 @@ const classes = useStyles()
     )
 }
 
-export default ParmacistLayout
+export default PharmacistLayout

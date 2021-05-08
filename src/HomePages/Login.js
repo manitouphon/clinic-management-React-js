@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 const userRole_selection = [
   {user_role:"Admin", id:1},
   {user_role:"Doctor", id:2},
-  {user_role:"Parmacist", id:3},
+  {user_role:"Pharmacist", id:3},
   {user_role:"Receptionist", id:4},
 ]
 
@@ -107,7 +107,7 @@ export default function Login() {
           <option aria-label="None" value="" />
           <option value={'Admin'}>Admin</option>
           <option value={'Doctor'}>Doctor</option>
-          <option value={'Parmacist'}>Parmacist</option>
+          <option value={'Pharmacist'}>Pharmacist</option>
           <option value={'Receptionist'}>Receptionist</option>
         </Select>
       </FormControl>
