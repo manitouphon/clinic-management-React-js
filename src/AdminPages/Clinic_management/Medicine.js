@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Doctor() {
+function Medicine() {
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
   const { data:Medicines, isPanding, error, setdata } = useFetch('http://localhost:8000/Medicine');
@@ -84,7 +84,7 @@ function Doctor() {
     <div>
       <div className={classes.page}>
         <ArrowForwardIosIcon color="secondary" className={classes.arrow} />
-        <h1>Doctor</h1>
+        <h1>Medicine</h1>
       </div>
       <hr />
       <div className={classes.page}>
@@ -135,4 +135,4 @@ function Doctor() {
   );
 }
 
-export default Doctor;
+export default Medicine;
